@@ -54,8 +54,9 @@ function newGame(){
 function monsterDamage(){
     players.Hero.health -= players.Monster.damage
     // console.log(players.Hero.health);
-    if(players.Monster.health ==0){
+    if(players.Monster.health <3){
         levelUp()
+        console.log(players.Monster.health);
     }
 
     
@@ -74,6 +75,8 @@ function levelUp(){
     level++
     players.Monster.health = 100 * level
     players.Monster.damage += 3
+    players.Hero.damage += 1
+    players.Hero.health += 20
 
 }
 
